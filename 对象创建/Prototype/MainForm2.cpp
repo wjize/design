@@ -1,5 +1,4 @@
 #include <string>
-//#include "FileSpliter1.cpp"
 #include "SplitterFactory.cpp"
 
 class Form{};
