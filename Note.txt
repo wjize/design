@@ -1,14 +1,14 @@
 ---------------
-static lib make:
+static lib 制作:
   1. g++/gcc -c func1.cpp func2.cpp ...
   2. ar rcs libfunc1.a func1.o func2.o ...
-static lib use:
+static lib 使用:
   1. g++/gcc -o hello main.cpp -I./include -L./lib -lfunc1
 
-dynamic lib make:
+dynamic lib 制作:
   1. g++/gcc -fpic -c func1.cpp func2.cpp ..
   2. g++/gcc -shared func1.o func2.o libfunc2.so
-dynamic lib use:
+dynamic lib 使用:
   1. g++/gcc -o hello main.cpp -I./include -L./lib -lfunc2
 
 ---------------
@@ -28,7 +28,16 @@ makefile中提供了一下变量提供,可直接使用:
   CPPFLAGS: C预处理的选项 -I
   CFLAGS:   C编译器的选项 -Wall -g -c
   LDFLAGS:  链接器选项 -L
-自动变量:
-  > $@: 表示规则中的目标
-  > $<: 表示规则中的第一个条件
-  > $^: 表示规则中的所有条件,组成一个列表,以空格隔开,如果这个列表中有重复的项则消除重复项
+  自动变量:
+  > $@: 表示命令规则中的目标
+  > $<: 表示命令规则中的第一个条件
+  > $^: 表示命令规则中的所有条件,组成一个列表,以空格隔开,如果这个列表中有重复的项则消除重复项
+  函数:
+  > wildcard -  查找指定目录下的指定类型的文件
+    src=$(wildcard *.cpp)  //找到当前目录下所有后缀为.cpp的文件,赋值给src
+  > patsubst - 匹配替换
+    obj=$(patsubst %.cpp,%.o,$(src))  //把src变量里所有后缀为.cpp的文件替换成.o
+
+make clean:
+  .PHONY: clean  //声明目标为伪目标,makefile将不再检查目标是否存在或是否需要更新。换言之,认为'clean'不存在
+  使用 -f  可以指定makefile文件, 如: make -f mainfile
