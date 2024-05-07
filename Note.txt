@@ -41,3 +41,27 @@ makefile中提供了一下变量提供,可直接使用:
 make clean:
   .PHONY: clean  //声明目标为伪目标,makefile将不再检查目标是否存在或是否需要更新。换言之,认为'clean'不存在
   使用 -f  可以指定makefile文件, 如: make -f mainfile
+
+---------------
+gdb调试工具:
+  > 启动程序: gdb ./a.out
+  > 可以让调试的程序在你所指定的断点处停住: b main.cpp:10
+  > 当程序停住时，可以检查此时程序中的情况: bt / print vars ...
+  > 动态的改变程序的环境: set var x = 10
+
+生成调试信息: 
+  gcc -g main.cpp -o a.out  //使用-g参数可以做到
+启动gdb:
+  gdb ./a.out 
+设置运行参数: 
+  > set args arg1 arg2 ... 
+  > show args
+启动程序:
+  > run //到断点处停止
+  > start //单步执行
+  > cont //继续执行
+显示源代码:
+  > list //显示当前行附近的代码
+  > list linenum //显示指定行附近的代码
+  > list function //显示指定函数的代码
+  
