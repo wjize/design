@@ -116,7 +116,7 @@ fork函数:
   > 作用是创建子进程,原型: pid_t fork(void);
   > 父子进程不共享全局变量,"写时复制 - 读时共享"
 exec函数族:
-  int execl(const char *path, const char arg0, ... / (char *) NULL */);  //从指定路径加载并执行一个新程序，参数以字符串形式传递，以 NULL 结束
+  int execl(const char *path, const char arg0, ... (char *) NULL);  //从指定路径加载并执行一个新程序，参数以字符串形式传递，以 NULL 结束
     /* execl("/bin/ls", "ls", "-l", NULL); */
   int execv(const char *path, char *const argv[]);  //从指定路径加载并执行一个新程序，参数以字符串数组形式传递。
     /* char *args[] = {"ls", "-l", NULL};  */
