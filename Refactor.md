@@ -146,7 +146,7 @@
     - 如果想要添加一大堆额外行为，就得运用 <Introduce Local Extension> 
     
 20. Data Class (纯稚的数据类)
-    "所谓Data Class是指，它们拥有一下字段用于读写，除此之外没有别的用处"
+    "所谓Data Class是指，它们拥有一些字段用于读写，除此之外没有别的用处"
     - 如果发现它们，立刻用<Encapsulate Field> 将它们封装起来
     - 如果这些类内含容器类的字段，应该检查它们是不是得到了恰当的封装，如果没有需要使用 <Encapsulate Collection> 把它们封装，对于那些不该被其他类修改的字段运用 <Remove Setting Method>
     - 然后找出这些取值/设值函数被其他类调用的地点，尝试使用<Move Method>搬运到数据类中
