@@ -1,52 +1,46 @@
 # Refactoring
 
-
-
 ## Improving the Design of Existing Code
 
-
-
 ### Bad Smell
-
-
 
 ```java
 1. Duplicated Code (重复代码)
     "设法将它们合而为一，程序会变得更好"
     - 同一个类的两个函数有相同的表达式 
-    	> 使用 <Extract Method> 提炼出重复代码，然后让两个函数都调用它。
+        > 使用 <Extract Method> 提炼出重复代码，然后让两个函数都调用它。
     - 两个互为兄弟的子类内含有相同表达式 
-    	> 对两个类都使用 <Extract Method>，然后对提炼出来的代码使用 <Pull Up Method> 放入父类中。
+        > 对两个类都使用 <Extract Method>，然后对提炼出来的代码使用 <Pull Up Method> 放入父类中。
     - 两个互为兄弟的子类之间只是类似，并非完全相同
-    	> 使用 <Extract Method> 将相似部分和差异部分割开，构成单独函数，然后运用<Form Template Method>获一个Template Method设计模式
+        > 使用 <Extract Method> 将相似部分和差异部分割开，构成单独函数，然后运用<Form Template Method>获一个Template Method设计模式
     - 如果相同函数以不同算法做相同事
-    	> 选择其中较清晰的一个，并使用 <Substitute Algorithm> 将其他函数的算法替换掉
+        > 选择其中较清晰的一个，并使用 <Substitute Algorithm> 将其他函数的算法替换掉
     - 如果两个毫不相干的类出现(Duplicated Code)
-    	> 考虑对其中一个使用 <Extract Class> 将重复代码提炼到一个独立类中，然后在另一个类内使用这个新类，也可能是另外两个类应该引用这个第三个类。
+        > 考虑对其中一个使用 <Extract Class> 将重复代码提炼到一个独立类中，然后在另一个类内使用这个新类，也可能是另外两个类应该引用这个第三个类。
 
 2. Long Method (过长函数)
     "应该更积极地分解函数"
     - 百分之九十九的场合里，要把函数变小，只需要使用 <Extract Method> 将函数适合集中在一起的部分，提炼出一个新的函数
     - 如果函数内有大量的参数和临时变量，会对函数提炼形成阻碍。仍用 <Extract Method> 会导致提炼的新函数机会没有可读性
-    	> 尝试运用 <Replace Temp with Query> 消除临时元素，<Introduce Parameter Object> 和 <Preserve Whole Object> 将过长的参数列变得简洁一些。如果仍然不能解决则需要使用 <Replace Method with Method Object>方法
+        > 尝试运用 <Replace Temp with Query> 消除临时元素，<Introduce Parameter Object> 和 <Preserve Whole Object> 将过长的参数列变得简洁一些。如果仍然不能解决则需要使用 <Replace Method with Method Object>方法
 
 3. Large Class (过大的类)
     "如果单个类做太多事情，往往就会出现太多实例变量"
     - 当类中出现太多实例变量时，运用 <Extract Class> 将几个变量一起提炼至新类中
     - 有时类并非在所有时刻都使用所有实例变量。
-    	> 可以多次使用 <Extract Class> 或 <Extract Subclass>
+        > 可以多次使用 <Extract Class> 或 <Extract Subclass>
     - 和“太多实例变量”一样，类内如果有太多代码，也是代码重复。
-    	> 最简单的办法将其消化与内部。将类中行数过多的函数提炼成多个小函数
-    	> 也适合使用 <Extract Interface> 为每一种方法提炼出一个接口
+        > 最简单的办法将其消化与内部。将类中行数过多的函数提炼成多个小函数
+        > 也适合使用 <Extract Interface> 为每一种方法提炼出一个接口
     - 如果(Large Class)是一个GUI类
-    	> 需要把数据和行为移到一个独立的领域对象去。使用 <Duplicate Observerd Data> 去做 
+        > 需要把数据和行为移到一个独立的领域对象去。使用 <Duplicate Observerd Data> 去做 
 
 4. Long Parameter List (过长参数列)
     "函数需要的东西多半可以在宿主类种找到，让函数能从中获得自己需要的东西就行了"
     - 向已有的对象发出一条请求就可以取代一个参数
-    	> 使用 <Replace Parameter with Method> ,比如: 通过调用this.get_age(),就可获得age属性，从而代替传参。
+        > 使用 <Replace Parameter with Method> ,比如: 通过调用this.get_age(),就可获得age属性，从而代替传参。
     - “已有的对象”可能是函数所属类内的一个字段或是一个参数
-    	> 运用 <Preserve Whole Object> 将来自同一个对象的一堆数据收集起来，并以该对象替换他们。
+        > 运用 <Preserve Whole Object> 将来自同一个对象的一堆数据收集起来，并以该对象替换他们。
     - 如果某些数据缺乏合理的对象归属
         > 可以使用 <Introduce Parameter Object> 为他们制造出一个“参数对象”
 
@@ -165,12 +159,7 @@
 
 ```
 
-
-
 ### Refactoring Methods
-
-
 
 ```java
 ```
-
