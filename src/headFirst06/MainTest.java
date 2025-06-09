@@ -46,7 +46,7 @@ public class MainTest {
         remoteControl.setCommand(2,gdUpCommand, gdDownCommand);
         remoteControl.setCommand(3,stereoOnWithCDCommand, stereoOffCommand);
 
-        System.out.println(remoteControl);
+        System.out.println(remoteControl.toSting());
 
         remoteControl.onButtonWasPushed(0);
         remoteControl.offButtonWasPushed(0);
