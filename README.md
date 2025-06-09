@@ -6,14 +6,14 @@
 
 ## 🧾 八大设计原则列表
 
-1. [依赖倒置原则（DIP）](#principle-1依赖倒置原则dip)
-2. [开放封闭原则（OCP）](#principle-2开放封闭原则ocp)
-3. [单一职责原则（SRP）](#principle-3单一职责原则srp)
-4. [里氏替换原则（LSP）](#principle-4里氏替换原则lsp)
-5. [接口隔离原则（ISP）](#principle-5接口隔离原则isp)
-6. [组合优于继承（PCoI）](#principle-6优先使用对象组合而不是类继承)
-7. [封装变化点（EVoC）](#principle-7封装变化点)
-8. [针对接口编程（PoI）](#principle-8针对接口编程而不是实现编程)
+- [依赖倒置原则（DIP）](#principle-1依赖倒置原则dip)
+- [开放封闭原则（OCP）](#principle-2开放封闭原则ocp)
+- [单一职责原则（SRP）](#principle-3单一职责原则srp)
+- [里氏替换原则（LSP）](#principle-4里氏替换原则lsp)
+- [接口隔离原则（ISP）](#principle-5接口隔离原则isp)
+- [组合优于继承（PCoI）](#principle-6优先使用对象组合而不是类继承PCoI)
+- [封装变化点（EVoC）](#principle-7封装变化点EVoC)
+- [针对接口编程（PoI）](#principle-8针对接口编程而不是实现编程PoI)
 
 ---
 
