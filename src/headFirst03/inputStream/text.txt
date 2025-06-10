@@ -1,1 +1,1 @@
-I know the dectorator pattern therefore rule!
+I know the decorator pattern therefore rule!
