@@ -8,6 +8,7 @@ import static headFirst05.MainTest.singletonPattern;
 import static headFirst06.MainTest.commandPattern;
 import static headFirst07.adapt.MainTest.adaptPattern;
 import static headFirst07.facade.MainTest.facadePattern;
+import static headFirst08.MainTest.templatePattern;
 
 /**
 *     Created by wangjize on 2025/6/4.
@@ -26,5 +27,6 @@ public class Main {
         // commandPattern();
         // adaptPattern();
         // facadePattern();
+        // templatePattern();
     }
 }
