@@ -25,6 +25,6 @@ public class Main {
         // singletonPattern();
         // commandPattern();
         // adaptPattern();
-        facadePattern();
+        // facadePattern();
     }
 }
