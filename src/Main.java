@@ -30,7 +30,7 @@ public class Main {
         // adaptPattern();
         // facadePattern();
         // templatePattern();
-        compositePattern();
+        // compositePattern();
         iteratorPattern();
     }
 }
