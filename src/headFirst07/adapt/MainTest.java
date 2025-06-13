@@ -1,7 +1,10 @@
 package headFirst07.adapt;
 
 
+import headFirst07.adapt.adapter.DuckAdapter;
+import headFirst07.adapt.adapter.TurkeyAdapter;
 import headFirst07.adapt.duck.Duck;
+import headFirst07.adapt.duck.Turkey;
 import headFirst07.adapt.duckImpl.MallardDuck;
 import headFirst07.adapt.duckImpl.WildTurkey;
 
@@ -15,7 +18,7 @@ import headFirst07.adapt.duckImpl.WildTurkey;
  */
 public class MainTest {
     public static void adaptPattern() {
-        MallardDuck mallardDuck = new MallardDuck();
+        MallardDuck duck = new MallardDuck();
 
         WildTurkey turkey = new WildTurkey();
         Duck turkeyAdapter = new TurkeyAdapter(turkey);
@@ -25,10 +28,22 @@ public class MainTest {
         turkey.fly();
 
         System.out.println("\nThe Duck says...");
-        testDuck(mallardDuck);
+        testDuck(duck);
 
         System.out.println("\nThe TurkeyAdapter says...");
         testDuck(turkeyAdapter);
+
+        System.out.println("\n----------\n");
+
+        MallardDuck duck2 = new MallardDuck();
+        Turkey duckAdapter = new DuckAdapter(duck2);
+
+        for(int i=0;i<10;i++) {
+            System.out.println("The DuckAdapter says...");
+            duckAdapter.gobble();
+            duckAdapter.fly();
+        }
+
 
     }
     public static void testDuck(Duck duck) {
