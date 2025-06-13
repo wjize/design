@@ -19,7 +19,7 @@ import static headFirst09.iterator.MainTest.iteratorPattern;
 public class Main {
     // 每个方法对应一种设计模式
     public static void main(String[] args) {
-        strategyPattern();
+        // strategyPattern();
         // observerPattern();
         // decorativePattern();
         // simpleFactoryPattern();
