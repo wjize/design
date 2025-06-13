@@ -8,33 +8,39 @@ import java.util.ArrayList;
  */
 public abstract class Pizza {
     String name;
-    ArrayList<String> topping;
+    String dough;
+    String sauce;
+    ArrayList toppings = new ArrayList();
 
-    public Pizza() {
-        topping = new ArrayList<>();
+    public String getName() {
+        return name;
     }
 
     public void prepare() {
-        System.out.println("Preparing " + this.name);
-        System.out.println("Adding topping: ");
-        for (String s : topping) {
-            System.out.println("   " + s);
-        }
+        System.out.println("Preparing " + name);
     }
 
     public void bake() {
-        System.out.println("Baking for 25 minutes at 350");
+        System.out.println("Baking " + name);
     }
+
     public void cut() {
-        System.out.println("Cutting the pizza into diagonal slices");
+        System.out.println("Cutting " + name);
     }
+
     public void box() {
-        System.out.println("Place pizza in official PizzaStore box");
+        System.out.println("Boxing " + name);
     }
-    public void eat() {
-        System.out.println("Eaten the pizza" + "\n");
-    }
-    public String getName() {
-        return name;
+
+    public String toString() {
+        // code to display pizza name and ingredients
+        StringBuffer display = new StringBuffer();
+        display.append("---- " + name + " ----\n");
+        display.append(dough + "\n");
+        display.append(sauce + "\n");
+        for (int i = 0; i < toppings.size(); i++) {
+            display.append((String )toppings.get(i) + "\n");
+        }
+        return display.toString();
     }
 }
