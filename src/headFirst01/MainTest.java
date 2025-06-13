@@ -1,14 +1,8 @@
 package headFirst01;
 
 
+import headFirst01.duck.*;
 import headFirst01.duck.behaviorImpl.FlyRocketPowered;
-import headFirst01.duck.behaviorImpl.Squeak;
-import headFirst01.duck.Duck;
-import headFirst01.duck.MallardDuck;
-import headFirst01.duck.ModelDuck;
-import headFirst01.character.Character;
-import headFirst01.character.King;
-import headFirst01.character.weaponbehaviorImpl.SwordBehaivor;
 
 /**
  * Created by wangjize on 2025/6/4.
@@ -20,24 +14,43 @@ import headFirst01.character.weaponbehaviorImpl.SwordBehaivor;
  */
 
 public class MainTest {
-    public static void strategyPatten() {
-        Duck mall = new MallardDuck();
-        mall.performQuack();
-        mall.performFly();
-        mall.swim();
-        mall.display();
+    public static void strategyPattern() {
+        Duck mallard1 = new MallardDuck();
+        System.out.println("Going to call MallardDuck.performQuack()");
+        mallard1.performQuack();
+        System.out.println("Going to call MallardDuck.performFly()");
+        mallard1.performFly();
 
-        Duck model = new ModelDuck();
+        Duck model1 = new ModelDuck();
+        System.out.println("Going to call ModelDuck.performFly()");
+        model1.performFly();
+        model1.setFlyBehavior(new FlyRocketPowered());
+        System.out.println("Going to call ModelDuck.performFly() after setting behavior at runtime()");
+        model1.performFly();
+
+        System.out.println("\n---------\n");
+
+        MallardDuck    mallard = new MallardDuck();
+        RubberDuck rubberDuckie = new RubberDuck();
+        DecoyDuck decoy = new DecoyDuck();
+        ModelDuck    model = new ModelDuck();
+
+        System.out.println("\nGoing to call MallardDuck.performQuack()");
+        mallard.performQuack();
+
+        System.out.println("\nGoing to call RubberDuck.performQuack()");
+        rubberDuckie.performQuack();
+
+        System.out.println("\nGoing to call DecoyDuck.performQuack()");
+        decoy.performQuack();
+
+        System.out.println("\nGoing to call ModelDuck.performFly()");
         model.performFly();
-        model.performQuack();
+
         model.setFlyBehavior(new FlyRocketPowered());
-        model.setQuackBehavior(new Squeak());
+        System.out.println("\nGoing to call ModelDuck.performFly() after setting setFlyBehavior()");
         model.performFly();
-        model.performQuack();
 
-        Character chr = new King();
-        chr.setWeaponBehavior(new SwordBehaivor());
-        chr.performWeapon();
-        chr.fight();
+
     }
 }

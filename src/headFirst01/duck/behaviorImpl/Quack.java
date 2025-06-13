@@ -9,6 +9,7 @@ import headFirst01.duck.behavior.QuackBehavior;
 public class Quack implements QuackBehavior {
     @Override
     public void quack() {
-        System.out.println("gua_gua_gua");
+        System.out.println("Quack.quack()");
+        System.out.println("Quack");
     }
 }

@@ -9,6 +9,7 @@ import headFirst01.duck.behavior.FlyBehavior;
 public class FlyWithWings implements FlyBehavior {
     @Override
     public void fly() {
-        System.out.println("I can fly with wings");
+        System.out.println("FlyWithWings.fly()");
+        System.out.println("I'm flying!!");
     }
 }

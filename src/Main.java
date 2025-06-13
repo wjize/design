@@ -1,5 +1,5 @@
-import static headFirst01.MainTest.strategyPatten;
-import static headFirst02.MainTest.observerPatten;
+import static headFirst01.MainTest.strategyPattern;
+import static headFirst02.MainTest.observerPattern;
 import static headFirst03.MainTest.decorativePattern;
 import static headFirst04.absFactory.MainTest.absFactoryPatten;
 import static headFirst04.factory.MainTest.factoryPattern;
@@ -19,8 +19,8 @@ import static headFirst09.iterator.MainTest.iteratorPattern;
 public class Main {
     // 每个方法对应一种设计模式
     public static void main(String[] args) {
-        // strategyPatten();
-        // observerPatten();
+        strategyPattern();
+        // observerPattern();
         // decorativePattern();
         // simpleFactoryPattern();
         // factoryPattern();
@@ -31,6 +31,6 @@ public class Main {
         // facadePattern();
         // templatePattern();
         // compositePattern();
-        iteratorPattern();
+        // iteratorPattern();
     }
 }

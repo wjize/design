@@ -9,6 +9,7 @@ import headFirst01.duck.behavior.QuackBehavior;
 public class Squeak implements QuackBehavior {
     @Override
     public void quack() {
-        System.out.println("zi_zi_zi");
+        System.out.println("Squeak.quack()");
+        System.out.println("Squeak");
     }
 }
