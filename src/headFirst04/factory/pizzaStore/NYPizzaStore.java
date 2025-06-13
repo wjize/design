@@ -8,17 +8,18 @@ import headFirst04.factory.pizza.*;
  */
 public class NYPizzaStore extends PizzaStore {
     @Override
-    public Pizza createPizza(String type) {
-        Pizza pizza = null;
-        switch (type) {
+    public Pizza createPizza(String item) {
+        switch (item) {
             case "cheese":
-                pizza = new NYCheesePizza();
-                break;
+                return new NYStyleCheesePizza();
+            case "veggie":
+                return new NYStyleVeggiePizza();
             case "clam":
-                pizza = new NYClamPizza();
-                break;
+                return new NYStyleClamPizza();
+            case "pepperoni":
+                return new NYStylePepperoniPizza();
+            default:
+                return null;
         }
-
-        return pizza;
     }
 }

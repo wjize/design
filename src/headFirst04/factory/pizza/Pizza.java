@@ -10,10 +10,10 @@ public abstract class Pizza {
     String name;
     String dough;
     String sauce;
-    ArrayList<String> topping;
+    ArrayList<String> toppings;
 
     public Pizza() {
-        topping = new ArrayList<>();
+        toppings = new ArrayList<>();
     }
 
     public void prepare() {
@@ -21,7 +21,7 @@ public abstract class Pizza {
         System.out.println("Tossing dough..." + this.dough);
         System.out.println("Adding sauce..." + this.sauce);
         System.out.println("Adding topping: ");
-        for (String s : topping) {
+        for (String s : toppings) {
             System.out.println("   " + s);
         }
     }
@@ -36,7 +36,19 @@ public abstract class Pizza {
         System.out.println("Place pizza in official PizzaStore box");
     }
 
+
     public String getName() {
         return name;
+    }
+
+    public String toString() {
+        StringBuffer display = new StringBuffer();
+        display.append("---- " + name + " ----\n");
+        display.append(dough + "\n");
+        display.append(sauce + "\n");
+        for (int i = 0; i < toppings.size(); i++) {
+            display.append((String )toppings.get(i) + "\n");
+        }
+        return display.toString();
     }
 }
