@@ -10,7 +10,7 @@ public interface PizzaIngredientFactory {
     Dough createDough();
     Sauce createSauce();
     Cheese createCheese();
-    Pepperoni createPepperoni();
-    Clams createClams();
     Veggies[] createVeggies();
+    Pepperoni createPepperoni();
+    Clams createClam();
 }

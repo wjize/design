@@ -6,23 +6,25 @@ import headFirst04.absFactory.materialImpl.*;
 import headFirst04.absFactory.pizzaIngredient.PizzaIngredientFactory;
 
 /**
- * Created by wangjize on 2025/6/6.
+ * Created by wangjize on 2025/6/13.
  */
-public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
+public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
     public Dough createDough() {
-        return new ThinCrustDough();
+        return new ThickCrustDough();
     }
 
     public Sauce createSauce() {
-        return new MarinaraSauce();
+        return new PlumTomatoSauce();
     }
 
     public Cheese createCheese() {
-        return new ReggianoCheese();
+        return new MozzarellaCheese();
     }
 
     public Veggies[] createVeggies() {
-        Veggies veggies[] = { new Garlic(), new Onion(), new Mushroom(), new RedPepper() };
+        Veggies veggies[] = { new BlackOlives(),
+                new Spinach(),
+                new Eggplant() };
         return veggies;
     }
 
@@ -31,6 +33,6 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
     }
 
     public Clams createClam() {
-        return new FreshClams();
+        return new FrozenClams();
     }
 }
