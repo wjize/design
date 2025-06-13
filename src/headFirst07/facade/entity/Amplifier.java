@@ -5,33 +5,51 @@ package headFirst07.facade.entity;
  * Created by wangjize on 2025/6/10.
  */
 public class Amplifier {
+    String description;
     Tuner tuner;
-    DvdPlayer dvdPlayer;
-    CdPlayer cdPlayer;
+    DvdPlayer dvd;
+    CdPlayer cd;
+
+    public Amplifier(String description) {
+        this.description = description;
+    }
 
     public void on() {
-        System.out.println("Top-O-line Amplifier on");
+        System.out.println(description + " on");
     }
+
     public void off() {
-        System.out.println("Top-O-line Amplifier off");
+        System.out.println(description + " off");
     }
+
+    public void setStereoSound() {
+        System.out.println(description + " stereo mode on");
+    }
+
+    public void setSurroundSound() {
+        System.out.println(description + " surround sound on (5 speakers, 1 subwoofer)");
+    }
+
+    public void setVolume(int level) {
+        System.out.println(description + " setting volume to " + level);
+    }
+
     public void setTuner(Tuner tuner) {
+        System.out.println(description + " setting tuner to " + dvd);
         this.tuner = tuner;
     }
-    public void setDvdPlayer(DvdPlayer dvdPlayer) {
-        this.dvdPlayer = dvdPlayer;
-        System.out.println("Top-O-line Amplifier setting DVD Player to Top-O-line DVD Player");
-    }
-    public void setVolume(int volume) {
-        System.out.println("Top-O-line Amplifier setting volume to " + volume);
-    }
-    public void pause() {
 
+    public void setDvd(DvdPlayer dvd) {
+        System.out.println(description + " setting DVD player to " + dvd);
+        this.dvd = dvd;
     }
-    public void play() {
 
+    public void setCd(CdPlayer cd) {
+        System.out.println(description + " setting CD player to " + cd);
+        this.cd = cd;
     }
-    public void stop() {
 
+    public String toString() {
+        return description;
     }
 }

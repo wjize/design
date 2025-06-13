@@ -5,10 +5,21 @@ package headFirst07.facade.entity;
  * Created by wangjize on 2025/6/10.
  */
 public class Screen {
-    public void up(){
-        System.out.println("Theater Screen going up");
+    String description;
+
+    public Screen(String description) {
+        this.description = description;
     }
-    public void down(){
-        System.out.println("Theater Screen going down");
+
+    public void up() {
+        System.out.println(description + " going up");
+    }
+
+    public void down() {
+        System.out.println(description + " going down");
+    }
+
+    public String toString() {
+        return description;
     }
 }
