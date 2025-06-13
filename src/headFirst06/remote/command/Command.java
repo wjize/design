@@ -1,4 +1,4 @@
-package headFirst06.command;
+package headFirst06.remote.command;
 
 
 /**

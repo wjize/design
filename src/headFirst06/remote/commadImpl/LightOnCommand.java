@@ -1,24 +1,25 @@
-package headFirst06.commadImpl;
+package headFirst06.remote.commadImpl;
 
 
-import headFirst06.command.Command;
-import headFirst06.entity.Light;
+import headFirst06.remote.command.Command;
+import headFirst06.remote.entity.Light;
 
 /**
  * Created by wangjize on 2025/6/9.
  */
 public class LightOnCommand implements Command {
     Light light;
+    int level;
     public LightOnCommand(Light light) {
         this.light = light;
     }
-    @Override
+
     public void execute() {
+        level = light.getLevel();
         light.on();
     }
 
-    @Override
     public void undo() {
-        light.off();
+        light.dim(level);
     }
 }

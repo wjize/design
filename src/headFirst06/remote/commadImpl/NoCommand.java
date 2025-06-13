@@ -1,7 +1,7 @@
-package headFirst06.commadImpl;
+package headFirst06.remote.commadImpl;
 
 
-import headFirst06.command.Command;
+import headFirst06.remote.command.Command;
 
 /**
  * Created by wangjize on 2025/6/9.
