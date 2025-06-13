@@ -1,10 +1,8 @@
 package headFirst02;
 
 
-import headFirst02.weather.weatherInfoImpl.CurrentConditionsDisplay;
-import headFirst02.weather.weatherInfoImpl.WeatherData;
-import headFirst02.weatherUtil.weatherInfo2Impl.CurrentConditionsDisplay2;
-import headFirst02.weatherUtil.weatherInfo2Impl.WeatherData2;
+import headFirst02.weather.weatherInfoImpl.*;
+import headFirst02.weatherUtil.weatherInfo2Impl.*;
 
 /**
  * Created by wangjize on 2025/6/4.
@@ -16,23 +14,28 @@ import headFirst02.weatherUtil.weatherInfo2Impl.WeatherData2;
  */
 
 public class MainTest {
-    public static void observerPatten() {
+    public static void observerPattern() {
         WeatherData weatherData = new WeatherData();
 
-        CurrentConditionsDisplay currentDisplay1 = new CurrentConditionsDisplay("watch", weatherData);
-        CurrentConditionsDisplay currentDisplay2 = new CurrentConditionsDisplay("phone", weatherData);
+        CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay("My", weatherData);
+        StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+        ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+        HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
 
         weatherData.setMeasurements(80, 65, 30.4f);
-        weatherData.setMeasurements(81, 70, 29.2f);
-        weatherData.setMeasurements(82, 60, 24.2f);
+        weatherData.setMeasurements(82, 70, 29.2f);
+        weatherData.setMeasurements(78, 90, 29.2f);
 
-        weatherData.removeObserver(currentDisplay1);
+        System.out.println("\n----------\n");
 
-        weatherData.setMeasurements(83, 55, 24.3f);
+        WeatherData2 weatherData2 = new WeatherData2();
+        CurrentConditionsDisplay2 currentConditions2 = new CurrentConditionsDisplay2(weatherData2);
+        StatisticsDisplay2 statisticsDisplay2 = new StatisticsDisplay2(weatherData2);
+        ForecastDisplay2 forecastDisplay2 = new ForecastDisplay2(weatherData2);
+        HeatIndexDisplay2 heatIndexDisplay2 = new HeatIndexDisplay2(weatherData2);
 
-        WeatherData2 weatherDataNew = new WeatherData2();
-        CurrentConditionsDisplay2 currentDisplayNew = new CurrentConditionsDisplay2(weatherDataNew);
-        weatherDataNew.setMeasurements(80, 65, 30.4f);
-
+        weatherData2.setMeasurements(80, 65, 30.4f);
+        weatherData2.setMeasurements(82, 70, 29.2f);
+        weatherData2.setMeasurements(78, 90, 29.2f);
     }
 }

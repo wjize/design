@@ -1,4 +1,4 @@
-package headFirst02.swingObs;
+package headFirst02.swing;
 
 
 import javax.swing.*;
